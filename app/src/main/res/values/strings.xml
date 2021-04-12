@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calculadora de IMC - Veiga de Almeida</string>
+    <string name="edit_text_peso">Peso em Kg</string>
+    <string name="edit_text_altura">Altura em metros</string>
+    <string name="button_calcular">Calcular IMC</string>
+    <string name="button_voltar">VOLTAR</string>
+</resources>
