@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
             val sendTextAltura = findViewById<EditText>(R.id.edit_text_altura)
             //CLICK LISTENER PARA ENVIAR OS DADOS DA MAIN ACTIVITY PARA A RESULTADO ACTIVITY
             buttonCalcular.setOnClickListener {
-                val stringPeso = sendTextPeso.text.toString()
+                val stringPeso  = sendTextPeso.text.toString()
                 val stringAltura = sendTextAltura.text.toString()
-                //INTENT PARA TROCAR DE ACTIVITY E ENVIAR OS DADOS
+
                 if(stringPeso == "" || stringAltura == ""){
                     Toast.makeText(this, "ERRO! PESO OU ALTURA VAZIA!", Toast.LENGTH_SHORT).show()
                 }

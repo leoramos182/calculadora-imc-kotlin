@@ -32,11 +32,7 @@ class ResultadoActivity : AppCompatActivity() {
         receiverAltura.text = "Altura: $stringAltura"
 
         calcularImc(stringPeso,stringAltura)
-        if (stringPeso != null) {
-            if (stringAltura != null) {
-                calcularGrau(stringPeso.toFloat() / (stringAltura.toFloat() * stringAltura.toFloat()))
-            }
-        }
+        calcularGrau(stringPeso!!.toFloat() / (stringAltura!!.toFloat() * stringAltura.toFloat()))
 
         val buttonVoltar = findViewById<Button>(R.id.voltar_button)
         buttonVoltar.setOnClickListener {
@@ -45,10 +41,10 @@ class ResultadoActivity : AppCompatActivity() {
     }
     @SuppressLint("SetTextI18n")
     private fun calcularImc(peso : String?, altura : String?){
-        var peso = peso?.toFloatOrNull()
-        var altura = altura?.toFloatOrNull()
+        val pesoImc = peso?.toFloatOrNull()
+        val alturaImc = altura?.toFloatOrNull()
         if(peso != null && altura != null){
-            var imc = peso / (altura * altura)
+            val imc = pesoImc!! / (alturaImc!! * alturaImc)
             text_view_imc.text = "IMC: %.2f".format(imc)
         }
     }
