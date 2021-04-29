@@ -12,23 +12,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            val buttonCalcular = findViewById<Button>(R.id.calcular_button)
-            val sendTextPeso = findViewById<EditText>(R.id.edit_text_peso)
-            val sendTextAltura = findViewById<EditText>(R.id.edit_text_altura)
-            //CLICK LISTENER PARA ENVIAR OS DADOS DA MAIN ACTIVITY PARA A RESULTADO ACTIVITY
-            buttonCalcular.setOnClickListener {
-                val stringPeso  = sendTextPeso.text.toString()
-                val stringAltura = sendTextAltura.text.toString()
+         //BUTTONS DA APLICAÇÃO
+        val buttonCalcular = findViewById<Button>(R.id.calcular_button)
+        val buttonHistorico = findViewById<Button>(R.id.historico_button)
 
-                if(stringPeso == "" || stringAltura == ""){
-                    Toast.makeText(this, "ERRO! PESO OU ALTURA VAZIA!", Toast.LENGTH_SHORT).show()
-                }
-                else {
-                    val intent = Intent(this, ResultadoActivity::class.java)
-                    intent.putExtra("message_key", stringPeso)
-                    intent.putExtra("message_key1", stringAltura)
-                    startActivity(intent)
-                }
+        val sendTextPeso = findViewById<EditText>(R.id.edit_text_peso)
+        val sendTextAltura = findViewById<EditText>(R.id.edit_text_altura)
+
+        //IMPLEMENTAÇÃO SQLITE
+
+        //CLICK LISTENER PARA ENVIAR OS DADOS DA MAIN ACTIVITY PARA A RESULTADO ACTIVITY
+        buttonCalcular.setOnClickListener {
+            val stringPeso  = sendTextPeso.text.toString()
+            val stringAltura = sendTextAltura.text.toString()
+
+            if(stringPeso == "" || stringAltura == ""){
+                Toast.makeText(this, "ERRO! PESO OU ALTURA VAZIO!", Toast.LENGTH_SHORT).show()
             }
+            else {
+                val intent = Intent(this, ResultadoActivity::class.java)
+                intent.putExtra("message_key", stringPeso)
+                intent.putExtra("message_key1", stringAltura)
+                startActivity(intent)
+                }
+        }
     }
 }

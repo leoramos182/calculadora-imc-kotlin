@@ -10,7 +10,7 @@
         android:id="@+id/text_view_peso"
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:hint="IMC VAI VIM AQUI"
+        android:hint="PESO VAI VIM AQUI"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/text_view_altura"
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:hint="GRAU DO IMC VEM AQUI"
+        android:hint="ALTURA DO IMC VEM AQUI"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,16 +57,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_imc"
         app:layout_constraintVertical_bias="0.068" />
-
     <Button
-        android:id="@+id/voltar_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/salvar_button"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/button_voltar"
+        android:text="@string/salvar_imc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_grau_imc" />
+
+    <Button
+        android:id="@+id/historico_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/historico_imc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salvar_button" />
+
+    <Button
+        android:id="@+id/voltar_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/button_voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historico_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,7 @@
     <Button
         android:id="@+id/calcular_button"
         android:text="@string/button_calcular"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

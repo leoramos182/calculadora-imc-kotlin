@@ -11,10 +11,12 @@ import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.calculadoraimcveiga.helper.HelperDB
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_resultado.*
 
 class ResultadoActivity : AppCompatActivity() {
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,22 @@ class ResultadoActivity : AppCompatActivity() {
         calcularGrau(stringPeso!!.toFloat() / (stringAltura!!.toFloat() * stringAltura.toFloat()))
 
         val buttonVoltar = findViewById<Button>(R.id.voltar_button)
+        val buttonSalvar = findViewById<Button>(R.id.salvar_button)
+        val buttonHistorico = findViewById<Button>(R.id.historico_button)
+
+        val helperDB : HelperDB = HelperDB(this)
+
         buttonVoltar.setOnClickListener {
             finish()
+        }
+        buttonSalvar.setOnClickListener {
+            helperDB.salvarImc(calcularImc(stringPeso,stringAltura).toString(),
+                calcularGrau(stringPeso!!.toFloat() / (stringAltura!!.toFloat() * stringAltura.toFloat())).toString())
+        }
+        buttonHistorico.setOnClickListener {
+            val intent = Intent(this, HistoricoActivity::class.java)
+
+            startActivity(intent)
         }
     }
     @SuppressLint("SetTextI18n")
@@ -67,4 +83,5 @@ class ResultadoActivity : AppCompatActivity() {
             text_view_grau_imc.setTextColor(resources.getColor(R.color.obesidade))
         }
     }
+
 }

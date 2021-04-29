@@ -4,4 +4,9 @@
     <string name="edit_text_altura">Altura em metros</string>
     <string name="button_calcular">Calcular IMC</string>
     <string name="button_voltar">VOLTAR</string>
+    <string name="salvar_imc">SALVAR IMC</string>
+    <string name="button_historico">HISTÓRICO</string>
+    <string name="teste">Isto é um teste!</string>
+    <string name="historico">HISTÓRICO PESSOAL</string>
+    <string name="historico_imc">HISTÓRICO</string>
 </resources>
